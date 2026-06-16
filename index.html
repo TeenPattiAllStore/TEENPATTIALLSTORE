@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabbu Gaming & Stores | Ultimate Gaming Hub</title>
+    <style>
+        /* Global Styles & Gaming Dark Theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0d0f14;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-transform: none;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: #161a23;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ff4655;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4655;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00f2fe;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00f2fe;
+        }
+
+        /* Hero / Banner Section */
+        .hero {
+            background: linear-gradient(rgba(13, 15, 20, 0.8), rgba(13, 15, 20, 0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 100px 5%;
+            text-align: center;
+            border-bottom: 1px solid #232a38;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0,242,254,0.5);
+        }
+
+        .hero h1 span {
+            color: #ff4655;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #a0aec0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-main {
+            background: linear-gradient(45deg, #ff4655, #ff7300);
+            color: white;
+            padding: 12px 35px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 70, 85, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 70, 85, 0.6);
+        }
+
+        /* Grid Section (Apps / Games / Tricks Showcase) */
+        .main-content {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 3px;
+            background-color: #00f2fe;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Clickable Item Cards */
+        .card {
+            background-color: #161a23;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #232a38;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00f2fe;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #232a38;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 14px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            background-color: rgba(0, 242, 254, 0.1);
+            color: #00f2fe;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card-text {
+            color: #a0aec0;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card-btn {
+            background-color: #232a38;
+            color: #ffffff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            transition: background-color 0.2s;
+        }
+
+        .card:hover .card-btn {
+            background-color: #ff4655;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #090b0e;
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid #232a38;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Area -->
+    <header>
+        <div class="logo">TEEN PATTI<span>ALLSTORE</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Tricks</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="hero">
+        <h1>Welcome to the Ultimate <span>Gaming Arena</span></h1>
+        <p>Get the latest updates, professional gaming strategies, and elite application reviews all in one place.</p>
+        <button class="btn-main">Explore Now</button>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="main-content">
+        <h2 class="section-title">Featured Content & Apps</h2>
+        
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1612287230202-1bf1d85d1bdf?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <span class="card-tag">Gaming Tricks</span>
+                    <h3 class="card-title">Top Card Game Strategies</h3>
+                    <p class="card-text">Master your next move with these hidden tips and psychological tricks used by pros.</p>
+                    <a href="#" class="card-btn">Read More</a>
+                </div>
+            </div>Teen Patti Master
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1551103782-8ab07afd45c1?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <span class="card-tag">Latest Apps</span>
+                    <h3 class="card-title">Must-Have Gaming Apps</h3>
+                    <p class="card-text">Check out the top-rated applications of the week, fully reviewed for performance.</p>
+                    <a href="#" class="card-btn">Download Now</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="card-body">
+                    <span class="card-tag">Pro Guide</span>
+                    <h3 class="card-title">Boost Device Performance</h3>
+                    <p class="card-text">Optimize your mobile or PC setup to get maximum FPS and zero lag during gameplay.</p>
+                    <a href="#" class="card-btn">Get Secrets</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 TEEN PATTI ALL STORE. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
